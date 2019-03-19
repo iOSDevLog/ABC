@@ -8,6 +8,7 @@
 
 import UIKit
 import Disk
+import DZNEmptyDataSet
 
 private let reuseIdentifier = "MainTableViewCell"
 private let kExamKey = "kExamKey"
@@ -24,7 +25,10 @@ class MainViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.tableFooterView = UIView()
         self.tableView.rowHeight = 88
-        
+
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
+
         load()
     }
     
@@ -115,5 +119,16 @@ extension MainViewController: UpdateExam {
             self.exams = data
         }
         self.tableView.reloadData()
+    }
+}
+
+extension MainViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    func buttonImage(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> UIImage! {
+        return UIImage(named: "add")
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        self.performSegue(withIdentifier: "Test", sender: nil)
     }
 }
