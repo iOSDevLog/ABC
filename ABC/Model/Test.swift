@@ -6,9 +6,9 @@
 //  Copyright © 2019 iosdevlog. All rights reserved.
 //
 
-import Foundation
+import Disk
 
-struct Test {
-    var char: Character
+struct Test: Codable {
+    var char: String
     var isRight: Bool
 }

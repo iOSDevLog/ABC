@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Disk
 
 private let reuseIdentifier = "MainTableViewCell"
 private let kExamKey = "kExamKey"
@@ -21,6 +22,10 @@ class MainViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = editButtonItem
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.tableFooterView = UIView()
+        self.tableView.rowHeight = 88
+        
+        load()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,6 +74,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.dateLabel.text = String(dformatter.string(from: exam.date))
         
+        let tformatter = DateFormatter()
+        tformatter.dateFormat = "HH:mm:ss"
+        
+        cell.timeLabel.text = String(tformatter.string(from: exam.date))
+        
         return cell
     }
     
@@ -77,10 +87,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         
         let exam = exams[indexPath.row]
         performSegue(withIdentifier: "Detail", sender: exam)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 88
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -95,7 +101,19 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 extension MainViewController: UpdateExam {
     func update(exam: Exam) {
         self.exams.append(exam)
-        
+      
+        self.tableView.reloadData()
+        save()
+    }
+    
+    func save() {
+        try? Disk.save(exams, to: .documents, as: kExamKey)
+    }
+    
+    func load() {
+        if let data = try? Disk.retrieve(kExamKey, from: .documents, as: [Exam].self) {
+            self.exams = data
+        }
         self.tableView.reloadData()
     }
 }

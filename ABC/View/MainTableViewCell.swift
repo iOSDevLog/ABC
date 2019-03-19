@@ -16,4 +16,6 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var wrongLabel: UILabel!
     
     @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
 }

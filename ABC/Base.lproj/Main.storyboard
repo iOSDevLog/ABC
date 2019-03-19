@@ -55,8 +55,17 @@
                                                                                 <constraint firstAttribute="width" secondItem="QQo-ag-QKm" secondAttribute="height" multiplier="1:1" id="cUl-vj-SdG"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5f7-bt-c63">
-                                                                            <rect key="frame" x="37" y="4.5" width="232" height="20.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5f7-bt-c63">
+                                                                            <rect key="frame" x="37" y="4.5" width="38" height="20.5"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="38" id="2yM-RL-9pg"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIh-i5-b5Q">
+                                                                            <rect key="frame" x="83" y="4.5" width="186" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -72,13 +81,16 @@
                                                                                 <constraint firstAttribute="width" secondItem="IYm-u9-KVb" secondAttribute="height" multiplier="1:1" id="wbN-du-xaC"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TI8-Iq-6FO">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TI8-Iq-6FO">
                                                                             <rect key="frame" x="37" y="4.5" width="38" height="20.5"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="38" id="r1l-8O-8oI"/>
+                                                                            </constraints>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6E-Mk-zCh">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6E-Mk-zCh">
                                                                             <rect key="frame" x="83" y="4.5" width="186" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
@@ -99,9 +111,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dateLabel" destination="H6E-Mk-zCh" id="zgF-sU-a0k"/>
+                                            <outlet property="dateLabel" destination="cIh-i5-b5Q" id="f09-bT-RvZ"/>
                                             <outlet property="indexLabel" destination="IWm-nF-DOs" id="k2J-hl-MtI"/>
                                             <outlet property="rightLabel" destination="5f7-bt-c63" id="qYW-08-Lkr"/>
+                                            <outlet property="timeLabel" destination="H6E-Mk-zCh" id="ujZ-S8-9qE"/>
                                             <outlet property="wrongLabel" destination="TI8-Iq-6FO" id="hHo-Ae-I15"/>
                                         </connections>
                                     </tableViewCell>

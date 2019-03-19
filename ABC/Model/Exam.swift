@@ -6,10 +6,10 @@
 //  Copyright © 2019 iosdevlog. All rights reserved.
 //
 
-import Foundation
+import Disk
 
-struct Exam {
-    static let TOTAL = 10
+struct Exam: Codable {
+    static let TOTAL = 100
     static var CURRENT = 0
     var index: Int
     var wrong: Int

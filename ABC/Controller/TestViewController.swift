@@ -26,7 +26,7 @@ class TestViewController: UIViewController {
 
     @IBAction func wrong(_ sender: Any) {
         self.exam.wrong += 1
-        self.test = Test(char: alpha, isRight: false)
+        self.test = Test(char: String(alpha), isRight: false)
         self.exam.tests.append(self.test)
         checkFinish()
         updateUI()
@@ -34,7 +34,7 @@ class TestViewController: UIViewController {
     
     @IBAction func right(_ sender: Any) {
         self.exam.right += 1
-        self.test = Test(char: alpha, isRight: true)
+        self.test = Test(char: String(alpha), isRight: true)
         self.exam.tests.append(self.test)
         checkFinish()
         updateUI()
