@@ -13,12 +13,19 @@ class TestViewController: UIViewController {
     var exam: Exam!
     var index = 0
     var test: Test!
-    var alpha: Character = "A"
+    var letter: String = "A"
+    let allLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    let upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    let lowerLetters = "abcdefghijklmnopqrstuvwxyz"
+    let numberLetters = "0123456789"
+    var letters = ""
 
     @IBOutlet weak var testLbael: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        letters = allLetters
         Exam.CURRENT += 1
         self.exam = Exam(index: Exam.CURRENT, wrong: 0, right: 0, tests: [], date: Date())
         updateUI()
@@ -26,7 +33,7 @@ class TestViewController: UIViewController {
 
     @IBAction func wrong(_ sender: Any) {
         self.exam.wrong += 1
-        self.test = Test(char: String(alpha), isRight: false)
+        self.test = Test(char: letter, isRight: false)
         self.exam.tests.append(self.test)
         checkFinish()
         updateUI()
@@ -34,17 +41,35 @@ class TestViewController: UIViewController {
     
     @IBAction func right(_ sender: Any) {
         self.exam.right += 1
-        self.test = Test(char: String(alpha), isRight: true)
+        self.test = Test(char: letter, isRight: true)
         self.exam.tests.append(self.test)
         checkFinish()
         updateUI()
     }
     
+    @IBAction func changeType(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            letters = allLetters
+        case 1:
+            letters = upperLetters
+        case 2:
+            letters = lowerLetters
+        case 3:
+            letters = numberLetters
+        default:
+            letters = allLetters
+        }
+
+        self.index -= 1
+        self.updateUI()
+    }
+
     func updateUI() {
         self.index += 1
-        self.alpha = randomCharacter()
+        self.letter = randomCharacter()
         self.title = "\(index)/\(Exam.TOTAL)"
-        self.testLbael.text = "\(alpha)"
+        self.testLbael.text = letter
     }
     
     func checkFinish() {
@@ -53,9 +78,8 @@ class TestViewController: UIViewController {
         }
     }
     
-    func randomCharacter() -> Character {
-        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        return letters.randomElement()!
+    func randomCharacter() -> String {
+        return String(letters.randomElement()!)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

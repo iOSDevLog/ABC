@@ -257,18 +257,33 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BHK-A8-1HB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="ABC"/>
+                                    <segment title="abc"/>
+                                    <segment title="123"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeType:" destination="YYD-AN-kpE" eventType="valueChanged" id="6E4-LT-Kzm"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rIT-Hr-TrS" firstAttribute="centerY" secondItem="t3j-2z-DyA" secondAttribute="centerY" id="AR1-IM-J1v"/>
                             <constraint firstItem="1e0-PY-LnR" firstAttribute="trailing" secondItem="rIT-Hr-TrS" secondAttribute="trailing" priority="750" id="Eyy-7H-2Qj"/>
                             <constraint firstItem="rIT-Hr-TrS" firstAttribute="leading" secondItem="1e0-PY-LnR" secondAttribute="leading" priority="750" id="Iuy-1m-Ia5"/>
+                            <constraint firstItem="BHK-A8-1HB" firstAttribute="leading" secondItem="1e0-PY-LnR" secondAttribute="leading" id="KFH-1b-esB"/>
                             <constraint firstItem="1e0-PY-LnR" firstAttribute="bottom" secondItem="rIT-Hr-TrS" secondAttribute="bottom" priority="750" id="MEy-A4-zZ4"/>
+                            <constraint firstItem="BHK-A8-1HB" firstAttribute="top" secondItem="1e0-PY-LnR" secondAttribute="top" id="O2t-LC-oTY"/>
                             <constraint firstItem="hPn-5p-Okb" firstAttribute="leading" secondItem="t3j-2z-DyA" secondAttribute="leading" id="P6f-4F-tkz"/>
                             <constraint firstItem="1e0-PY-LnR" firstAttribute="trailing" secondItem="hPn-5p-Okb" secondAttribute="trailing" id="U7b-2p-agu"/>
                             <constraint firstItem="rIT-Hr-TrS" firstAttribute="top" secondItem="1e0-PY-LnR" secondAttribute="top" priority="750" id="VwT-5i-34n"/>
                             <constraint firstItem="1e0-PY-LnR" firstAttribute="bottom" secondItem="hPn-5p-Okb" secondAttribute="bottom" id="baC-zd-qHN"/>
                             <constraint firstItem="rIT-Hr-TrS" firstAttribute="centerX" secondItem="t3j-2z-DyA" secondAttribute="centerX" id="dZS-bK-1TG"/>
+                            <constraint firstItem="1e0-PY-LnR" firstAttribute="trailing" secondItem="BHK-A8-1HB" secondAttribute="trailing" id="qhM-sL-Gk1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1e0-PY-LnR"/>
                     </view>
