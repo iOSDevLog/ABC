@@ -9,6 +9,6 @@
 import Disk
 
 struct Test: Codable {
-    var char: String
+    var letter: String
     var isRight: Bool
 }

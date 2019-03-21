@@ -1,0 +1,51 @@
+
+/* Class = "UILabel"; text = "A"; ObjectID = "4aP-zS-dWV"; */
+"4aP-zS-dWV.text" = "A";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "5f7-bt-c63"; */
+"5f7-bt-c63.text" = "1";
+
+/* Class = "UISegmentedControl"; BHK-A8-1HB.segmentTitles[0] = "All"; ObjectID = "BHK-A8-1HB"; */
+"BHK-A8-1HB.segmentTitles[0]" = "全部";
+
+/* Class = "UISegmentedControl"; BHK-A8-1HB.segmentTitles[1] = "ABC"; ObjectID = "BHK-A8-1HB"; */
+"BHK-A8-1HB.segmentTitles[1]" = "ABC";
+
+/* Class = "UISegmentedControl"; BHK-A8-1HB.segmentTitles[2] = "abc"; ObjectID = "BHK-A8-1HB"; */
+"BHK-A8-1HB.segmentTitles[2]" = "abc";
+
+/* Class = "UISegmentedControl"; BHK-A8-1HB.segmentTitles[3] = "123"; ObjectID = "BHK-A8-1HB"; */
+"BHK-A8-1HB.segmentTitles[3]" = "123";
+
+/* Class = "UIViewController"; title = "ABC"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "字母";
+
+/* Class = "UILabel"; text = "00:00:00"; ObjectID = "H6E-Mk-zCh"; */
+"H6E-Mk-zCh.text" = "00:00:00";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "IWm-nF-DOs"; */
+"IWm-nF-DOs.text" = "1";
+
+/* Class = "UIViewController"; title = "Detail"; ObjectID = "RU7-nq-pUv"; */
+"RU7-nq-pUv.title" = "统计";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "TI8-Iq-6FO"; */
+"TI8-Iq-6FO.text" = "1";
+
+/* Class = "UIViewController"; title = "Test"; ObjectID = "YYD-AN-kpE"; */
+"YYD-AN-kpE.title" = "测试";
+
+/* Class = "UILabel"; text = "2019"; ObjectID = "cIh-i5-b5Q"; */
+"cIh-i5-b5Q.text" = "2019";
+
+/* Class = "UITabBarItem"; title = "Test"; ObjectID = "oT4-d0-DFZ"; */
+"oT4-d0-DFZ.title" = "测试";
+
+/* Class = "UILabel"; text = "A"; ObjectID = "rIT-Hr-TrS"; */
+"rIT-Hr-TrS.text" = "A";
+
+/* Class = "UINavigationItem"; title = "ABC"; ObjectID = "tvM-2g-nKq"; */
+"tvM-2g-nKq.title" = "ABC";
+
+/* Class = "UITabBarItem"; title = "Train"; ObjectID = "zlH-AE-Zsg"; */
+"zlH-AE-Zsg.title" = "训练";

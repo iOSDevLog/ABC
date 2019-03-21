@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  ABC
+
+  Created by iosdevlog on 2019/3/21.
+  Copyright © 2019 iosdevlog. All rights reserved.
+*/
+
+"Train" = "训练";
+
+"Test" = "测试";

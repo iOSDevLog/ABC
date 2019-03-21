@@ -38,6 +38,10 @@ class MainViewController: UIViewController {
         self.tableView.reloadData()
     }
 
+    @IBAction func train(_ sender: Any) {
+        self.performSegue(withIdentifier: "train", sender: nil)
+    }
+    
     @IBAction func test(_ sender: Any) {
         self.performSegue(withIdentifier: "Test", sender: nil)
     }
@@ -51,9 +55,17 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail" {
             let vc = segue.destination as! DetailViewController
+            vc.hidesBottomBarWhenPushed = true
             vc.exam = sender as? Exam
+        } else if segue.identifier == "Train" {
+            let vc = segue.destination as! TestViewController
+            vc.hidesBottomBarWhenPushed = true
+            vc.learnType = .train
+            vc.delegate = self
         } else if segue.identifier == "Test" {
             let vc = segue.destination as! TestViewController
+            vc.hidesBottomBarWhenPushed = true
+            vc.learnType = .test
             vc.delegate = self
         }
     }
@@ -104,6 +116,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension MainViewController: UpdateExam {
     func update(exam: Exam) {
+        guard exam.tests.count > 0 else {
+            return
+        }
         self.exams.append(exam)
       
         self.tableView.reloadData()

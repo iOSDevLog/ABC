@@ -61,10 +61,17 @@ extension DetailViewController: UICollectionViewDataSource {
         
         // Configure the cell
         let test = exam.tests[indexPath.item]
-        cell.charLabel.text = String(test.char)
+        cell.charLabel.text = test.letter
         cell.testImageView.image = test.isRight ? UIImage(named: "right") : UIImage(named: "wrong")
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let test = exam.tests[indexPath.item]
+        speech(letter: test.letter)
     }
 }
 

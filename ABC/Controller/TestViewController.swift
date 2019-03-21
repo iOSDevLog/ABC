@@ -9,17 +9,18 @@
 import UIKit
 
 class TestViewController: UIViewController {
+    enum LearningType {
+        case train
+        case test
+    }
+    var learnType = LearningType.train
     var delegate: UpdateExam? = nil
     var exam: Exam!
     var index = 0
     var test: Test!
     var letter: String = "A"
-    let allLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    let upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    let lowerLetters = "abcdefghijklmnopqrstuvwxyz"
-    let numberLetters = "0123456789"
     var letters = ""
-
+    
     @IBOutlet weak var testLbael: UILabel!
     
     override func viewDidLoad() {
@@ -30,10 +31,16 @@ class TestViewController: UIViewController {
         self.exam = Exam(index: Exam.CURRENT, wrong: 0, right: 0, tests: [], date: Date())
         updateUI()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        speech(letter: self.letter)
+    }
 
     @IBAction func wrong(_ sender: Any) {
         self.exam.wrong += 1
-        self.test = Test(char: letter, isRight: false)
+        self.test = Test(letter: letter, isRight: false)
         self.exam.tests.append(self.test)
         checkFinish()
         updateUI()
@@ -41,7 +48,7 @@ class TestViewController: UIViewController {
     
     @IBAction func right(_ sender: Any) {
         self.exam.right += 1
-        self.test = Test(char: letter, isRight: true)
+        self.test = Test(letter: letter, isRight: true)
         self.exam.tests.append(self.test)
         checkFinish()
         updateUI()
@@ -67,8 +74,23 @@ class TestViewController: UIViewController {
 
     func updateUI() {
         self.index += 1
-        self.letter = randomCharacter()
-        self.title = "\(index)/\(Exam.TOTAL)"
+        
+        var letter = randomCharacter()
+        
+        while letter == self.letter {
+            letter = randomCharacter()
+        }
+        
+        self.letter = letter
+        switch learnType {
+        case .train:
+            self.navigationItem.title = "Train".localized + " \(self.exam.right)/\(index-1)"
+            speech(letter: self.letter, detail: true)
+            break
+        case .test:
+            self.navigationItem.title = "Test".localized + "\(index)/\(Exam.TOTAL)"
+            break
+        }
         self.testLbael.text = letter
     }
     
