@@ -88,7 +88,7 @@ class TestViewController: UIViewController {
             speech(letter: self.letter, detail: true)
             break
         case .test:
-            self.navigationItem.title = "Test".localized + "\(index)/\(Exam.TOTAL)"
+            self.navigationItem.title = "Test".localized + " \(index)/\(Exam.TOTAL)"
             break
         }
         self.testLbael.text = letter

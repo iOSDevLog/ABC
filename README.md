@@ -3,11 +3,8 @@ ABC Test
 
 ## Screenshots
 
-![1](iPhone/1.png)
-![2](iPhone/2.png)
-![3](iPhone/3.png)
-![4](iPhone/4.png)
-![5](iPhone/5.png)
+![iPhone](screenshots/iPhone.png)
+![iPad](screenshots/iPad.png)
 
 My child is 3 and a half years old. I want to check the mastery of his English letters and Arabic numerals.
 
