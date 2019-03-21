@@ -25,6 +25,22 @@ class DetailViewController: UIViewController {
         
         self.title = String(dformatter.string(from: exam.date))
     }
+
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape,
+            let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            let width = collectionView.bounds.size.height
+
+            layout.itemSize = CGSize(width: width/5, height: width/5)
+            layout.invalidateLayout()
+        } else if UIDevice.current.orientation.isPortrait,
+            let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            let width = collectionView.bounds.size.width
+
+            layout.itemSize = CGSize(width: width/5, height: width/5)
+            layout.invalidateLayout()
+        }
+    }
 }
 
 extension DetailViewController: UICollectionViewDataSource {
